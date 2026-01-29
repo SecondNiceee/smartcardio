@@ -1,17 +1,44 @@
-@import "../../node_modules/scss-reset/reset";
-@import "./custom-reset";
-@import "./variables.scss";
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind screens;
 
+/* Custom reset */
+input,
+textarea,
+button,
+select,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
 * {
     scroll-behavior: smooth;
-  }
+}
+
+/* CSS Variables */
+:root {
+    --font3: var(--third-family);
+    --font4: var(--font4);
+}
+
+/* Utility classes */
+.none {
+    display: none !important;
+}
+
+.show-opacity {
+    opacity: 1 !important;
+}
+
+.black {
+    color: black !important;
+}
+
+.black-border {
+    border: 2px solid black !important;
+    background-color: white !important;
+}
 
 /* Reveal animations */
 @keyframes down-up-animation {
@@ -218,3 +245,21 @@
     transition: opacity 400ms ease-out;
 }
 
+.zoom-entry {
+    opacity: 0 !important;
+    display: none;
+}
+
+.zoom-entry-active {
+    opacity: 0 !important;
+    display: block;
+}
+
+.zoom-enter-done {
+    opacity: 1 !important;
+}
+
+.zoom-exit-done {
+    opacity: 0 !important;
+    display: none !important;
+}

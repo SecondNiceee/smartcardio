@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import "./styles/_index.scss";
 import dynamic from 'next/dynamic';
 import Smartcardio from './sections/Smartcardio';
 
