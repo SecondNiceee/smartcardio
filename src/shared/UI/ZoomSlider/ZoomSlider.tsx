@@ -1,8 +1,7 @@
 "use client";
-import React, { ReactNode, useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "./zoomSlider.scss";
 import Cross from "./Cross";
 import { Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
@@ -41,9 +40,7 @@ function ZoomSlider({
     return (
       <SwiperSlide key={index} className="mx-auto flex justify-center">
         {isResizable ? (
-          <picture
-            className={`w-fit h-[100vh]`}
-          >
+          <picture className="w-fit h-[100vh]">
             <source
               media="(max-width:768px)"
               srcSet={createImageResolution(src as string, 768)}
@@ -70,7 +67,7 @@ function ZoomSlider({
         )}
       </SwiperSlide>
     );
-  }, []);
+  }, [imagesClassNames, isResizable]);
 
   const changeSlider = (swiper: SwiperType) => {
     if (mainSwiperRef) {
@@ -87,17 +84,20 @@ function ZoomSlider({
       unmountOnExit
       mountOnEnter
     >
-      <div ref={ref} className="slider-wrapper">
-        <div className="slider-container">
-          <div onClick={closeZoom} className="trigger-area" />
+      <div ref={ref} className="fixed bg-white left-0 top-0 w-full h-screen z-[400]">
+        <div className="relative w-full">
+          <div onClick={closeZoom} className="z-[-1] absolute left-0 top-0 w-screen h-screen" />
 
-          <div onClick={closeZoom} className="circle close-button">
+          <div 
+            onClick={closeZoom} 
+            className="group cursor-pointer min-w-[80px] max-h-[80px] h-[80px] w-[80px] transition-colors duration-500 rounded-full flex items-center justify-center bg-white border border-black hover:bg-black absolute top-[10px] right-[40px] z-[600] md:scale-[0.7] md:top-[10px] md:right-[10px]"
+          >
             <Cross />
           </div>
 
-          <NextButton arrowType="circle" className="next-zoom" />
+          <NextButton arrowType="circle" className="next-zoom absolute z-[600] md:hidden top-1/2 right-[40px] -translate-y-1/2" />
 
-          <PrevButton arrowType="circle" className="prev-zoom" />
+          <PrevButton arrowType="circle" className="prev-zoom absolute z-[600] md:hidden top-1/2 left-[40px] -translate-y-1/2" />
 
           <Swiper
             onSlideChange={changeSlider}
@@ -111,7 +111,7 @@ function ZoomSlider({
           >
             {slides.map((slide, index) => {
               return (
-                <div key={index} className={`image select-none`}>
+                <div key={index} className="select-none">
                   {render(slide, index)}
                 </div>
               );

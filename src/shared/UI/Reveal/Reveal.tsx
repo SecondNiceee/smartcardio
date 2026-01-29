@@ -1,83 +1,67 @@
 'use client'
 import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
-import "./Reveal.scss"
 import { CHARACTER } from './models/CharacterEnum';
 
 type DivProps = JSX.IntrinsicElements["div"]
 
 interface IReveal extends DivProps{
     children? : ReactNode,
-    character :  CHARACTER,
+    character: CHARACTER,
     className? : string,
     start? : boolean
 } 
+
+const animationClasses = {
+  [CHARACTER.UPDOWN]: "animate-reveal-up-down",
+  [CHARACTER.DOWNUP]: "animate-reveal-down-up",
+  [CHARACTER.LEFT]: "animate-reveal-left",
+  [CHARACTER.RIGHT]: "animate-reveal-right",
+};
+
 const Reveal:FC<IReveal> = ({children, character, className = "", start, ...props}) => {
-
-    const [isRendered, setIsRendered] = useState<boolean>(false)
-
+    const [isRevealed, setIsRevealed] = useState<boolean>(false)
     const revealRef = useRef<HTMLDivElement>(null)
-    
 
-
-    const addFunction = useCallback(() => {
-        setIsRendered(true)
-
-        switch (character){
-            case CHARACTER.UPDOWN:{
-                revealRef.current?.classList.add("upDown")
-                return;
-            }
-            case CHARACTER.DOWNUP:{
-                revealRef.current?.classList.add("downUp")
-                return;
-            }
-            case CHARACTER.LEFT:{
-                revealRef.current?.classList.add("left")
-                return;
-            }
-            case CHARACTER.RIGHT:
-                revealRef.current?.classList.add("right")
-                return;
-            default:{
-
-            }
-        }
-
-    } , [character, setIsRendered]) 
+    const reveal = useCallback(() => {
+        setIsRevealed(true)
+    }, [])
 
     const observerCallback:IntersectionObserverCallback = useCallback((entries) => {
         const firstEntry = entries[0]
         if (firstEntry.isIntersecting){
-            addFunction()
+            reveal()
         }
-    } , [addFunction])
+    }, [reveal])
 
-    useEffect( () => {
-
-        if (start && !isRendered){
-            addFunction()
+    useEffect(() => {
+        if (start && !isRevealed){
+            reveal()
         }
 
-        if (!isRendered){
+        if (!isRevealed){
             const observer = new IntersectionObserver(observerCallback)
     
             if (revealRef.current){
                 observer.observe(revealRef.current)
             }
             if (start){
-                addFunction()
+                reveal()
             }
     
             return () => {
                 observer.disconnect()
             }
         }
-    } , [observerCallback, addFunction, isRendered] )
+    }, [observerCallback, reveal, isRevealed, start])
 
-    
+    const animationClass = isRevealed ? animationClasses[character] || "" : "";
 
     return (
-        <div className={`${className} reveal-base`} ref={revealRef} {...props}>
+        <div 
+          className={`${className} ${isRevealed ? animationClass : "opacity-0"} transition-all duration-500`} 
+          ref={revealRef} 
+          {...props}
+        >
             {children}
         </div> 
     );

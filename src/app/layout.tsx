@@ -4,7 +4,6 @@ import { Raleway } from "next/font/google";
 import { Inter } from "next/font/google"
 import LayoutBuyingPopup from "@/widgets/BuyingPopup/ui/LayoutBuyingPopup";
 import { LayoutCart } from "@/widgets/Cart";
-import "../styles/_index.scss"
 import Head from "next/head";
 import StartApp from "@/features/Home/StartApp";
 

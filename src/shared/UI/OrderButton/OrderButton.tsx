@@ -1,10 +1,7 @@
 "use client";
 
-import React, { CSSProperties, FC, ReactNode } from "react";
-import cl from "./OrderButton.module.scss";
+import React, { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
-
-
 
 type TypeAProps = JSX.IntrinsicElements["a"]
 
@@ -15,8 +12,11 @@ interface IOrderButton {
   className?: string;
   link?: string;
   externalLink?: string;
-  externalProps? : TypeAProps
+  externalProps?: TypeAProps
 }
+
+const baseStyles = "rounded-[10px] bg-[#b200ff] flex items-center justify-center py-[13px] [&>p:first-of-type]:font-semibold [&>p:first-of-type]:text-[clamp(0.813rem,0.639rem+0.77vw,1.188rem)] [&>p:first-of-type]:leading-[143%] [&>p:first-of-type]:text-center [&>p:first-of-type]:text-white";
+
 function OrderButton({
   onClick,
   styles = {},
@@ -30,33 +30,30 @@ function OrderButton({
     <>
       {link ? (
         <Link
-          className={`${cl.orderButton} ${className}`}
+          className={`${baseStyles} ${className}`}
           style={styles}
           href={link}
         >
-          {" "}
-          {children}{" "}
+          {children}
         </Link>
       ) : externalLink ? (
         <a
           {...externalProps}
           download={true}
           target="_blank"
-
           rel="noopener noreferrer"
-          className={`${cl.orderButton} ${className}`}
+          className={`${baseStyles} ${className}`}
           style={styles}
           href={externalLink}
         >
-          {" "}
-          {children}{" "}
+          {children}
         </a>
       ) : (
         <button
           style={styles}
           onClick={onClick}
           onPointerDown={onClick}
-          className={`${cl.orderButton} ${className}`}
+          className={`${baseStyles} ${className}`}
         >
           {children}
         </button>

@@ -43,9 +43,29 @@ module.exports = {
           "75%": { transform: "translateY(20px)" },
           "100%": { transform: "translateY(0px)" },
         },
+        "reveal-down-up": {
+          "0%": { transform: "translateY(10%)", opacity: "0" },
+          "100%": { transform: "translateY(0%)", opacity: "1" },
+        },
+        "reveal-up-down": {
+          "0%": { transform: "translateY(-10%)", opacity: "0" },
+          "100%": { transform: "translateY(0%)", opacity: "1" },
+        },
+        "reveal-left": {
+          "0%": { transform: "translateX(-5%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
+        "reveal-right": {
+          "0%": { transform: "translateX(5%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
       },
       animation: {
         "up-down": "up-down 3s ease-in-out infinite both",
+        "reveal-down-up": "reveal-down-up 1s ease-in-out both",
+        "reveal-up-down": "reveal-up-down 1s ease-in-out both",
+        "reveal-left": "reveal-left 1s ease-in-out both",
+        "reveal-right": "reveal-right 1s ease-in-out both",
       },
     },
   },
@@ -127,6 +147,17 @@ module.exports = {
             transform: "scale(1.1)",
           },
         },
+        ".white-hover": {
+          transition: "0.4s",
+          border: "1px solid transparent",
+          "&:hover": {
+            border: "1px solid black",
+            backgroundColor: "white !important",
+            "& p": {
+              color: "black !important",
+            },
+          },
+        },
         ".gradient-hover": {
           transition: "0.4s",
           position: "relative",
@@ -189,6 +220,27 @@ module.exports = {
         },
         ".bg-liner": {
           background: "linear-gradient(90deg, #40f 0%, #ff00d9 100%)",
+        },
+        ".zoom-entry": {
+          opacity: "0 !important",
+          display: "none",
+        },
+        ".zoom-entry-active": {
+          opacity: "0 !important",
+          display: "block",
+        },
+        ".zoom-enter-done": {
+          opacity: "1 !important",
+        },
+        ".zoom-exit": {
+          opacity: "1 !important",
+        },
+        ".zoom-exit-active": {
+          opacity: "0 !important",
+        },
+        ".zoom-exit-done": {
+          opacity: "0 !important",
+          display: "none !important",
         },
       });
     }),
