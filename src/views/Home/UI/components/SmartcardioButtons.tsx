@@ -6,7 +6,6 @@ import { routes } from "@/shared/config/routes";
 const SmartcardioButtons = () => {
   const [scrollToForWhom, setScrollToForWhom] = useState(() => () => {});
 
-
   useEffect(() => {
     const importScrollToDownloads = async () => {
       const { scrollToForWhom } = await import('../../utils/scrollToForWhom');
@@ -15,23 +14,19 @@ const SmartcardioButtons = () => {
     importScrollToDownloads();
   }, []);
 
-  // const orderFunction = () => {  
-  //   dispath(setCartPopup(true));
-  // };
-
   return (
     <>
       <OrderButton
-        className="smartcardio__order-button"
+        className="w-[clamp(10rem,5.833rem+11.57vw,16.25rem)] gradient-hover 2xs:w-full"
         link={routes.store}
       >
         <p>Заказать</p>
       </OrderButton>
       <OrderButton
-        className="smartcardio__read-button"
+        className="w-[clamp(10rem,5.833rem+11.57vw,16.25rem)] bg-white scale-hover 2xs:w-full"
         onClick={scrollToForWhom}
       >
-        <p>Читать далее</p>
+        <p className="text-black">Читать далее</p>
       </OrderButton>
     </>
   );

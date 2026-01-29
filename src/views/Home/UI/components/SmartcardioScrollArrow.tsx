@@ -3,21 +3,22 @@ import React, { useEffect, useState } from 'react';
 import { ScrollArrow } from './ScrollArrow';
 
 const SmartcardioScrollArrow = () => {
-    const [scrollToDownloads, setScrollToDownloads] = useState(() => () => {});
+  const [scrollToDownloads, setScrollToDownloads] = useState(() => () => {});
 
-    useEffect(() => {
+  useEffect(() => {
     const importScrollToDownloads = async () => {
-        const { scrollToDownloads } = await import('../../utils/scrollToDownloads');
-        setScrollToDownloads(() => scrollToDownloads);
+      const { scrollToDownloads } = await import('../../utils/scrollToDownloads');
+      setScrollToDownloads(() => scrollToDownloads);
     };
     importScrollToDownloads();
-    }, []);
-    return (
-        <ScrollArrow
-        onClick={scrollToDownloads}
-        className="smartcardio-arrow"
-      />
-    );
+  }, []);
+
+  return (
+    <ScrollArrow
+      onClick={scrollToDownloads}
+      className="animate-up-down mt-[90px] md:hidden"
+    />
+  );
 };
 
 export default SmartcardioScrollArrow;

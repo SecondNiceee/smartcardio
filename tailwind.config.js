@@ -32,9 +32,20 @@ module.exports = {
       padding: "20px",
     },
     extend: {
-
       backgroundSize: {
-        auto : "auto",
+        auto: "auto",
+      },
+      keyframes: {
+        "up-down": {
+          "0%": { transform: "translateY(0%)" },
+          "25%": { transform: "translateY(20px)" },
+          "50%": { transform: "translateY(0px)" },
+          "75%": { transform: "translateY(20px)" },
+          "100%": { transform: "translateY(0px)" },
+        },
+      },
+      animation: {
+        "up-down": "up-down 3s ease-in-out infinite both",
       },
     },
   },
