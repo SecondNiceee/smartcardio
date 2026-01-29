@@ -1,0 +1,113 @@
+.how-order{
+    overflow-x: clip;
+    max-width: 100vw;
+    .container{
+        @extend %container;
+        padding-bottom: $section-padding;
+        padding-top: $section-padding;
+        gap: $container-gap;
+        flex-direction: column;
+        max-width: 1140px;
+    }
+    .button-reveal{
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .how-order__cap{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap : $container-gap;
+        .how-order__header{
+            @extend %section-title;
+            color: white
+        }
+        .how-order__description{
+            @extend %section-title;
+            color: white;
+            font-size: clamp(1.188rem, 0.902rem + 1.43vw, 2.188rem);
+            font-weight: 400;
+        }
+        
+    }
+    .how-orders__items{
+        display: flex;
+        justify-content: space-between;
+        gap: clamp(0.625rem, -4.536rem + 10.75vw, 3.125rem)   ;
+        @media (max-width:768px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        @media (max-width:576px) {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+    }
+    .how-order__item{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        align-items: center;
+        padding: 20px;
+        border-radius: 20px;
+
+
+    }
+
+    .how-order__item:nth-child(1){
+        @media (max-width:768px) {
+            grid-column: 1/3;
+        }
+    }
+    .how-order__item:nth-child(2){
+        @media (max-width:768px) {
+            grid-column: 3/5;
+        }
+    }
+    .how-order__item:nth-child(3){
+        @media (max-width:768px) {
+            grid-column: 2/4;
+        }
+
+    }
+    .how-order__item:nth-child(1), .how-order__item:nth-child(2), .how-order__item:nth-child(3){
+        @media (max-width:576px) {
+            grid-column: unset;
+        }
+    }
+
+
+    .how-order__item-img{
+        width: 100px;
+        aspect-ratio: 1/1;
+    }
+    .how-order__tblock{
+        display: flex;
+        flex-direction: column;
+    }
+    .how-order__item-h{
+        @extend %paragraph;
+        color: black;
+        font-weight: 600;
+        text-align: center;
+    }
+    .how-order__item-p{
+        @extend %paragraph;
+        color: black;
+        text-align: center;
+    }
+    .how-order__button{
+        @extend %scale-hover;
+        padding: 20px 200px;
+        align-self: center;
+        ;
+        
+        @media (max-width:768px) {
+            padding: 13px 0px;
+            width: 70%;
+        }
+    }
+}

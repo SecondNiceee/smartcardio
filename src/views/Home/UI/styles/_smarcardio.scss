@@ -1,0 +1,136 @@
+
+@keyframes up-down{
+    0%{
+        transform: translateY(0%);
+    }
+    25%{
+        transform: translateY(20px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    75%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+
+.smartcardio-wrapper{
+    overflow-x: clip;
+    max-width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    @media (max-width:768px) {
+        height: unset;
+    }
+    .smartcardio__video{
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+.smartcardio{
+    position: relative;
+    z-index: 20;
+    height: 100%;
+    .container{
+        @extend %container;
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        align-items: center;
+        // padding-top: clamp(2.5rem, 1.071rem + 7.14vw, 7.5rem);
+        padding-bottom: 0;
+        @media (max-width:768px) {
+            transform: none;
+            position: static;
+            padding-top: clamp(2.5rem, 1.071rem + 7.14vw, 7.5rem);
+            padding-bottom: clamp(3.125rem, 1.781rem + 5.66vw, 6.875rem);
+        }
+    }
+    .smarcardio__header{
+        font-family: var(--third-family);
+        font-weight: 700;
+        font-size: clamp(1.875rem, 0.732rem + 5.71vw, 5.875rem);
+
+        /* line-height: 114px; */ 
+        line-height: 120%;
+        text-align: center;
+        color: #fff;
+        display: flex;
+        span{
+            font-size: clamp(1.25rem, 0.893rem + 1.79vw, 2.5rem);
+            transform: translateY(-20px);
+            
+        }
+    }
+    .smartcardio__description{
+        margin-top: 30px;
+        font-family: var(--third-family);
+        font-weight: 400;
+        font-size: clamp(1.188rem, 0.902rem + 1.43vw, 2.188rem);
+
+        /* line-height: 44px; */ 
+        line-height: 122%;
+        text-align: center;
+        color: #fff;
+        max-width: 720px;
+        span{
+            color: #6cff01;
+            font-weight: 600;
+        }
+    }
+    .smartcardio__buttons{
+        margin-top: clamp(2.188rem, 1.406rem + 3.91vw, 2.813rem);
+        display: flex;
+        gap: 30px;
+        @media (max-width:480px) {
+            flex-direction: column;
+            width: 80%;
+            gap: 12px;
+        }
+    }
+    .smartcardio-arrow{
+        animation: up-down 3s ease-in-out infinite both;
+        margin-top: 90px;
+        @media (max-width:768px) {
+            display: none;
+        }
+    }
+    .smartcardio__order-button{
+        width: clamp(10rem, 5.833rem + 11.57vw, 16.25rem);
+        @extend %gradient-hover;
+        @media (max-width:480px) {
+            width: 100%;
+        }
+        p{
+
+        }
+    }
+    .smartcardio__read-button{
+        width: clamp(10rem, 5.833rem + 11.57vw, 16.25rem);
+        background-color: white;
+        @extend %scale-hover;
+        @media (max-width:480px) {
+            width: 100%;
+        }
+        p:first-of-type{
+            color: black;
+        }
+    }
+
+
+}

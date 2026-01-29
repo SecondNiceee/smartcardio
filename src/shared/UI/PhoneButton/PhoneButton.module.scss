@@ -1,0 +1,28 @@
+@import "@/styles/variables";
+
+.phoneButton{
+    padding: 20px clamp(1rem, -0.965rem + 3.07vw, 1.875rem);
+    display: flex;
+    gap: 13px;
+    width: 100%;
+    text-decoration: none;
+    align-items: center;
+    border-radius: 12px;
+    background-color: black;
+    @extend %white-hover;
+    @media (max-width:480px) {
+        padding: 14px clamp(1rem, -0.965rem + 3.07vw, 1.875rem);
+    }
+}
+.phoneButtonImage{
+    width: 31px;
+    height: 31px;
+}
+.phoneButtonText{
+    font-family: var(--font3);
+    font-weight: 600;
+    font-size: clamp(0.813rem, 0.692rem + 0.6vw, 1.25rem);
+
+    text-align: center;
+    color: #fff;
+}
