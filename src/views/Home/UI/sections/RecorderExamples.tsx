@@ -1,78 +1,75 @@
 'use client'
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import Slider from "../components/Slider";
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { recordersSliders } from "../../config/smarcardioSliderImages";
 import ZoomSlider from "@/shared/UI/ZoomSlider/ZoomSlider";
 import { recorders } from "../../config/recorders";
-import Reveal  from "@/shared/UI/Reveal/Reveal";
+import Reveal from "@/shared/UI/Reveal/Reveal";
 import useZoomSwiper from "../../../../shared/hooks/useZoomSwiper";
 import useDefaultSwiper from "../../../../shared/hooks/useDefaultSwiper";
 import { RecorderItem } from "../components/RecorderItem";
 import { CHARACTER } from "@/shared/UI/Reveal/models/CharacterEnum";
 
 const RecorderExamples = () => {
+  const { activeSlide, handleSlideChange, swiperRef, changeSlide } = useDefaultSwiper();
+  const { closeZoom, zoomSlider, setZoomSlider } = useZoomSwiper();
 
-    const {activeSlide, handleSlideChange, swiperRef, changeSlide} = useDefaultSwiper()
-
-    const {closeZoom , zoomSlider, setZoomSlider} = useZoomSwiper()
-
-  const renderSmall = useCallback((src:string, index: number) => {
+  const renderSmall = useCallback((src: string, index: number) => {
     return (
-        <SwiperSlide key={index}  className={`mx-auto small-slide  rounded-sm cursor-pointer`}>
-            <Image className='w-[100%] h-[100%] rounded-sm' alt='#' src={src} width={600} height={600}  />
-        </SwiperSlide>
+      <SwiperSlide key={index} className="mx-auto small-slide rounded-sm cursor-pointer">
+        <Image className='w-full h-full rounded-sm' alt='Slide thumbnail' src={src} width={600} height={600} />
+      </SwiperSlide>
     )
-}, [activeSlide])
+  }, []);
+
   return (
-    <section className="section">
-      <div className="container gap-containerGap p-container flex flex-col">
+    <section className="overflow-x-clip max-w-[100vw]">
+      <div className="max-w-[1310px] mx-auto px-5 gap-[clamp(1.875rem,1.53rem+1.72vw,3.125rem)] py-[clamp(1.25rem,0.625rem+3.6vw,3.125rem)] flex flex-col items-center">
         <Reveal character={CHARACTER.UPDOWN}>
-            <h2 className="h2">Примеры записей c прибора</h2>
+          <h2 className="font-bold text-[clamp(1.563rem,1.338rem+1.12vw,2.375rem)] leading-[108%] text-center text-black">
+            Примеры записей c прибора
+          </h2>
         </Reveal>
-        <div className="flex md:flex-row flex-col-reverse md:gap-2 md:justify-between gap-containerGap w-[100%] items-center">
+        <div className="flex flex-col-reverse gap-[clamp(1.875rem,1.53rem+1.72vw,3.125rem)] w-full items-center md:flex-row md:gap-2 md:justify-between">
+          <Reveal
+            character={CHARACTER.LEFT}
+            className="flex flex-col w-full h-auto items-center max-w-[600px] gap-5 py-10 px-6 justify-between rounded-[10px] relative shadow-[0px_0px_8px_0px_rgba(34,60,80,0.2)] md:max-w-full md:gap-12"
+          >
+            {recorders.map((e, index) =>
+              <RecorderItem changeSlide={changeSlide} text={e} index={index} key={index} activeSlide={activeSlide} />
+            )}
+          </Reveal>
 
-            <Reveal character={CHARACTER.LEFT} className="flex flex-col w-[100%] h-auto items-center max-w-[600px] md:max-w-full gap-5 md:gap-12 py-10 px-6 justify-between  rounded-[10px] relative white-shadow">
-
-                {recorders.map( (e, index) => 
-                    <RecorderItem changeSlide={changeSlide} text={e} index={index} key={index} activeSlide={activeSlide} />
-                  )}
-
-            </Reveal>
-
-            <div className="md:w-[60%] w-[100%] flex flex-col gap-2">
-
+          <div className="w-full flex flex-col gap-2 md:w-[60%]">
             <Reveal character={CHARACTER.RIGHT}>
-
-                <Slider
-                    id={2}
-                    loop = {false}
-                    smallSliderStyles={{
-                        slidesPerView : 3,
-                        spaceBetween : 10
-                    }}
-                    handleSlideChange={handleSlideChange}
-                    ref={swiperRef}
-                    setZoomSlider={setZoomSlider}
-                    arrowType="just"
-                    renderMap={recordersSliders}
-                    renderSmall={renderSmall}
-                />
-
+              <Slider
+                id={2}
+                loop={false}
+                smallSliderStyles={{
+                  slidesPerView: 3,
+                  spaceBetween: 10
+                }}
+                handleSlideChange={handleSlideChange}
+                ref={swiperRef}
+                setZoomSlider={setZoomSlider}
+                arrowType="just"
+                renderMap={recordersSliders}
+                renderSmall={renderSmall}
+              />
             </Reveal>
-            </div>
-
+          </div>
         </div>
       </div>
-        <ZoomSlider
-        zoomState = {zoomSlider}
+      <ZoomSlider
+        zoomState={zoomSlider}
         initialSlide={activeSlide}
         closeZoom={closeZoom}
         slides={recordersSliders}
         mainSwiperRef={swiperRef}
-        />
-    </section>  
+      />
+    </section>
   );
 };
 

@@ -3,22 +3,30 @@ import { LottieOptions, useLottie } from "lottie-react";
 import React, { forwardRef } from "react";
 import coper from "@/shared/animations/coper.json";
 
-type DivProps = JSX.IntrinsicElements["div"] 
+interface InteractiveLottieProps {
+  className?: string;
+}
 
-const options:LottieOptions = {
-    animationData: coper,
-    loop: true,
-    style : {
-        width: "300px"
-    }
-  };
-const InteractiveLottie = forwardRef<HTMLDivElement, DivProps>((props, ref) => {
-    
-   const { View } = useLottie(options);  
+const options: LottieOptions = {
+  animationData: coper,
+  loop: true,
+  style: {
+    width: "300px"
+  }
+};
 
-  return <div ref={ref} className="interactive__lottie show">
+const InteractiveLottie = forwardRef<HTMLDivElement, InteractiveLottieProps>(
+  ({ className = "" }, ref) => {
+    const { View } = useLottie(options);
+
+    return (
+      <div ref={ref} className={`show ${className}`}>
         {View}
-    </div>;
-});
+      </div>
+    );
+  }
+);
+
+InteractiveLottie.displayName = "InteractiveLottie";
 
 export default React.memo(InteractiveLottie);
