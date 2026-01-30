@@ -43,9 +43,29 @@ module.exports = {
           "75%": { transform: "translateY(20px)" },
           "100%": { transform: "translateY(0px)" },
         },
+        "reveal-down-up": {
+          "0%": { transform: "translateY(10%)", opacity: "0" },
+          "100%": { transform: "translateY(0%)", opacity: "1" },
+        },
+        "reveal-up-down": {
+          "0%": { transform: "translateY(-10%)", opacity: "0" },
+          "100%": { transform: "translateY(0%)", opacity: "1" },
+        },
+        "reveal-left": {
+          "0%": { transform: "translateX(-5%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
+        "reveal-right": {
+          "0%": { transform: "translateX(5%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
       },
       animation: {
         "up-down": "up-down 3s ease-in-out infinite both",
+        "reveal-down-up": "reveal-down-up 1s ease-in-out both",
+        "reveal-up-down": "reveal-up-down 1s ease-in-out both",
+        "reveal-left": "reveal-left 1s ease-in-out both",
+        "reveal-right": "reveal-right 1s ease-in-out both",
       },
     },
   },
