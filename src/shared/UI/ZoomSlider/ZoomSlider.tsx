@@ -2,7 +2,6 @@
 import React, { ReactNode, useCallback, useEffect, useRef } from "react";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "./zoomSlider.scss";
 import Cross from "./Cross";
 import { Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";

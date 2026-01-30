@@ -1,7 +1,6 @@
 import { Accordion } from '@/shared/UI/Accordion/Accordion';
 import React from 'react';
 import { frequentQuestions } from '../../config/frequentQuestions';
-import "../styles/_telegram-bot.scss";
 import BlackThemeCircles from '@/shared/UI/BlackThemeCircles/BlackThemeCircles';
 import MakeCallButton from '../components/MakeCallButton';
 
@@ -11,7 +10,7 @@ const TelegramBotSection = () => {
             <BlackThemeCircles />
             <div className="container w-full p-container items-center gap-containerGap sm:gap-[10px]  flex flex-col">
                 <h2 className='h2 text-white'>Частые вопросы</h2>
-                <div className="flex sm:w-[90%] sm:p-10 w-full p-0 justify-between custom-corner-border"> 
+                <div className="flex sm:w-[90%] sm:p-10 w-full p-0 justify-between relative rounded-tr-3xl rounded-bl-3xl before:content-[''] before:absolute before:w-10 before:h-10 before:rounded-[inherit] before:pointer-events-none before:top-0 before:right-0 before:border-t-2 before:border-r-2 before:border-white after:content-[''] after:absolute after:w-10 after:h-10 after:rounded-[inherit] after:pointer-events-none after:bottom-0 after:left-0 after:border-b-2 after:border-l-2 after:border-white sm:before:block sm:after:block before:hidden after:hidden"> 
                     <Accordion content={frequentQuestions} />
                     {/* <TelegramPhoneInput /> */}
                 </div>

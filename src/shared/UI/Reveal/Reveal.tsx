@@ -1,6 +1,5 @@
 'use client'
 import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
-import "./Reveal.scss"
 import { CHARACTER } from './models/CharacterEnum';
 
 type DivProps = JSX.IntrinsicElements["div"]
