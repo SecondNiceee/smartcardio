@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import FormTextInput from '@/shared/UI/FormInput/FormTextInput';
 import PhoneInput from '../../widgets/BuyingPopup/ui/components/PhoneInput';
 import SubmitButton from '@/shared/UI/SubmitButton/SubmitButton';
-import "./telegram-styles.css";
+import CustomCheckbox from '@/shared/UI/CustomCheckbox/CustomCheckbox';
 import useAlert from '@/shared/providers/AlertProvider/useAlert';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { telegramFormSchema } from './model/telegram-form.validation';
@@ -19,7 +19,7 @@ const TelegramForm = () => {
 
     const {setTelegramPopup} = useTelegramPopup();
 
-    const {handleSubmit, register, control, formState : {errors}} = useForm<TTelegramForm>({
+    const {handleSubmit, register, control, watch, formState : {errors}} = useForm<TTelegramForm>({
         resolver: zodResolver(telegramFormSchema),
         defaultValues : {
             isPersonalAgree : true,
@@ -64,13 +64,13 @@ const TelegramForm = () => {
                 <PhoneInput label='Телефон для связи:' labelClassNames='!font-medium' error={errors.phone?.message} control={control} />
                 
                 <div className='flex items-center gap-2'>
-                <input
+                    <input
                         {...register("isPersonalAgree")}
                         id='isPersonalAgree'
                         type="checkbox"
-                        className="hidden" // скрываем оригинальный чекбокс
+                        className="hidden"
                     />
-                    <label htmlFor='isPersonalAgree' className="custom-checkbox"></label>
+                    <CustomCheckbox checked={watch("isPersonalAgree")} htmlFor='isPersonalAgree' />
                     <label htmlFor="isPersonalAgree">Согласие на обработку персональных данных</label>
                 </div>
                 {errors.isPersonalAgree ? <p className="p text-red-500">{errors.isPersonalAgree.message}</p> : <></>}
