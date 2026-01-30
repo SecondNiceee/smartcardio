@@ -1,10 +1,5 @@
-import dynamic from 'next/dynamic';
-import React from 'react';
-const Congratulation = dynamic(() => import("../../views/Congratulation/Congratulation"));
-const Page = () => {
-    return (
-        <Congratulation />
-    );
-};
+import Congratulation from "../../views/Congratulation/Congratulation";
 
-export default Page;
+export default function Page() {
+    return <Congratulation />;
+}
