@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
+const cdnUrl = process.env.CDN_URL || '';
+
 const nextConfig = {
+  assetPrefix: cdnUrl,
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
 
