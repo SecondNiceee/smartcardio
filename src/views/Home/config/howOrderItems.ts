@@ -1,3 +1,5 @@
+import { getCdnUrl } from "@/shared/utils/createImgPath";
+
 export type TypeOrder = {
     imageSrc : string,
     h : string,
@@ -5,17 +7,17 @@ export type TypeOrder = {
 }
 export const howOrderItems:TypeOrder[] = [
     {
-        imageSrc : "/images/cartIcon.png",
+        imageSrc : getCdnUrl("/images/cartIcon.png"),
         h : 'Выбирайте',
         p : "Укажите нужное количество приборов"
     },
     {
-        imageSrc: "/images/truckIcon.png",
+        imageSrc: getCdnUrl("/images/truckIcon.png"),
         h : "Оформляйте заказ",
         p : 'Выберите самый удобный вариант доставки'
     },
     {
-        imageSrc : '/images/moneyIcon.png',
+        imageSrc : getCdnUrl('/images/moneyIcon.png'),
         h : 'Оплатите',
         p : 'Оплата при получени, вводить данные карты <br> не нужно'
     }

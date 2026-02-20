@@ -1,5 +1,7 @@
+import { getCdnUrl } from "@/shared/utils/createImgPath";
+
 export const recognitionSrcImages:string[] = [
-    "/images/phone-1.png",
-    "/images/phone-2.png",
-    "/images/phone-3.png"
+    getCdnUrl("/images/phone-1.png"),
+    getCdnUrl("/images/phone-2.png"),
+    getCdnUrl("/images/phone-3.png")
 ]

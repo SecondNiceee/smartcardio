@@ -1,3 +1,5 @@
+import { getCdnUrl } from "@/shared/utils/createImgPath";
+
 export type TypeContact = {
     imageSrc : string,
     link : string,
@@ -7,20 +9,20 @@ export type TypeContact = {
 
 export const contacts:TypeContact[] = [
     {
-        iconSvg : "/images/vk.svg",
-        imageSrc : "/images/vk.jpg",
+        iconSvg : getCdnUrl("/images/vk.svg"),
+        imageSrc : getCdnUrl("/images/vk.jpg"),
         link : "https://vk.com/smart_cardio",
         name : "Научно-популярная медицина"
     },
     {
-        iconSvg : "/images/telegram.svg",
-        imageSrc : "/images/tg.jpg",
+        iconSvg : getCdnUrl("/images/telegram.svg"),
+        imageSrc : getCdnUrl("/images/tg.jpg"),
         link : "https://t.me/smart_cardio",
         name : "Для врачей"
     },
     {
-        iconSvg : "/images/dzen.svg",
-        imageSrc : "/images/blog.jpg",
+        iconSvg : getCdnUrl("/images/dzen.svg"),
+        imageSrc : getCdnUrl("/images/blog.jpg"),
         link : "https://dzen.ru/smartcardio",
         name : "Наш блог"
     }
