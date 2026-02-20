@@ -1,0 +1,15 @@
+@import "../../node_modules/scss-reset/reset";
+@import "./custom-reset";
+@import "./variables.scss";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+
+* {
+    scroll-behavior: smooth;
+  }
+
