@@ -5,5 +5,3 @@ export const  smartardioSliderImage = Array.from({length : 8}).map( (e, i) => {
 export const  recordersSliders = Array.from({length : 3}).map( (e, i) => {
     return `/images/example${i+1}.png`
 } )
-
-
