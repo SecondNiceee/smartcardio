@@ -1,6 +1,5 @@
 import React, { CSSProperties, FC } from 'react';
 import cl from "./_Video.module.scss"
-import { getCdnUrl } from '@/shared/utils/createImgPath'
 
 
 type VideoProps = JSX.IntrinsicElements["video"]  
@@ -24,7 +23,7 @@ const Video:FC<IVideo & VideoProps> = ({className = "" , videoClassName = "" ,st
             }}>
             </div>
             <video className={`${cl.video} ${videoClassName}`}  style={styles} muted={muted} {...props} playsInline >
-                <source type={type} src={getCdnUrl(`/videos/${videoName}`)}  />
+                <source type={type} src={`/videos/${videoName}`}  />
             </video>
         </div>
     );
