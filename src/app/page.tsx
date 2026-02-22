@@ -101,12 +101,19 @@ const mainProductJsonLd = {
     },
     manufacturer: {
         "@type": "Organization",
-        name: "Smartcardio",
+        name: 'ООО "СмартКардио"',
         url: "https://smartcardio.ru",
+        address: {
+            "@type": "PostalAddress",
+            addressLocality: "Саратов",
+            addressCountry: "RU",
+        },
+        taxID: "6450120179",
     },
     category: "Медицинские приборы > Кардиографы > Портативные электрокардиографы",
     sku: "SMARTCARDIO-001",
     mpn: "SC-ECG-6L",
+    gtin13: "",
     countryOfOrigin: "RU",
     offers: {
         "@type": "Offer",
@@ -118,15 +125,60 @@ const mainProductJsonLd = {
         itemCondition: "https://schema.org/NewCondition",
         seller: {
             "@type": "Organization",
-            name: "Smartcardio",
+            name: 'ООО "СмартКардио"',
+            url: "https://smartcardio.ru",
+            taxID: "6450120179",
         },
         shippingDetails: {
             "@type": "OfferShippingDetails",
+            shippingRate: {
+                "@type": "MonetaryAmount",
+                value: 0,
+                currency: "RUB",
+            },
             shippingDestination: {
                 "@type": "DefinedRegion",
                 addressCountry: "RU",
             },
+            deliveryTime: {
+                "@type": "ShippingDeliveryTime",
+                handlingTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 1,
+                    unitCode: "DAY",
+                },
+                transitTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 1,
+                    maxValue: 7,
+                    unitCode: "DAY",
+                },
+            },
         },
+        hasMerchantReturnPolicy: {
+            "@type": "MerchantReturnPolicy",
+            applicableCountry: "RU",
+            returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+            merchantReturnDays: 0,
+            returnMethod: "https://schema.org/ReturnByMail",
+            description: "Технически сложный товар надлежащего качества возврату и обмену не подлежит согласно действующему законодательству РФ.",
+        },
+        paymentAccepted: ["Наложенный платеж", "Оплата при получении"],
+        availableDeliveryMethod: [
+            {
+                "@type": "DeliveryMethod",
+                name: "Доставка в пункт выдачи CDEK",
+            },
+            {
+                "@type": "DeliveryMethod",
+                name: "Доставка в постамат",
+            },
+            {
+                "@type": "DeliveryMethod",
+                name: "Доставка курьером",
+            },
+        ],
     },
     additionalProperty: [
         {

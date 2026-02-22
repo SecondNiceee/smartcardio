@@ -138,8 +138,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Smartcardio",
-              alternateName: "СмартКардио",
+              name: 'ООО "СмартКардио"',
+              alternateName: ["Smartcardio", "СмартКардио"],
               url: "https://smartcardio.ru",
               logo: {
                 "@type": "ImageObject",
@@ -149,12 +149,54 @@ export default function RootLayout({
               },
               description: "Купить портативный электрокардиограф Smartcardio. Беспроводной кардиограф и ЭКГ прибор для дома — снятие ЭКГ и сатурации без геля и проводов.",
               foundingCountry: "RU",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Саратов",
+                addressCountry: "RU",
+              },
+              taxID: "6450120179",
+              legalName: 'ООО "СмартКардио"',
+              parentOrganization: {
+                "@type": "Organization",
+                name: 'ООО "АРИТМЕД"',
+                taxID: "9726013334",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Москва",
+                  addressCountry: "RU",
+                },
+                description: "Разработчик портативного электрокардиографа Smartcardio",
+              },
               sameAs: [],
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer service",
                 availableLanguage: "Russian",
               },
+              makesOffer: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "Портативный электрокардиограф СмартКардио",
+                    url: "https://smartcardio.ru/store/1",
+                  },
+                  priceCurrency: "RUB",
+                  price: 18816,
+                  availability: "https://schema.org/InStock",
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "Портативный электрокардиограф СмартКардио + Чехол для хранения",
+                    url: "https://smartcardio.ru/store/2",
+                  },
+                  priceCurrency: "RUB",
+                  price: 19104,
+                  availability: "https://schema.org/InStock",
+                },
+              ],
             }),
           }}
         />
