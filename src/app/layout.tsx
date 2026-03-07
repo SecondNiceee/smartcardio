@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import LayoutBuyingPopup from "@/widgets/BuyingPopup/ui/LayoutBuyingPopup";
 import { LayoutCart } from "@/widgets/Cart";
 import "../styles/_index.scss"
+import Head from "next/head";
 import StartApp from "@/features/Home/StartApp";
 
 import TelegramProvider from "@/shared/providers/TelegramProvider/TelegramProvider";
@@ -15,23 +16,13 @@ import { AlertProvider } from "@/shared/providers/AlertProvider/AlertProvider";
 
 const inter = Inter({ variable: "--font4", subsets: ["cyrillic"] });
 const yandexMetrikaScript = `
-(function(m,e,t,r,i,k,a){
-  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  for (var j = 0; j < document.scripts.length; j++) {
-    if (document.scripts[j].src === r) { return; }}
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0];
-  k.async=1;
-  k.src=r;
-  a.parentNode.insertBefore(k,a)
-})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-ym(101539371, "init", {
-  clickmap:true,
-  trackLinks:true,
-  accurateTrackBounce:true,
-  webvisor:true
-});
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+    ym(91617395, 'init', {webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 `;
 
 const raleway = Raleway({
@@ -43,35 +34,12 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://smartcardio.ru/'),
-  title: {
-    default: "Купить кардиограф Smartcardio — портативный электрокардиограф для дома | ЭКГ прибор без проводов",
-    template: "%s | Smartcardio — портативный электрокардиограф",
-  },
-  description: "Купить портативный электрокардиограф Smartcardio. Беспроводной кардиограф и ЭКГ прибор для дома — снятие ЭКГ и сатурации без геля и проводов, результат сразу в телефоне. Разработано и произведено в России.",
-  keywords: [
-    "купить кардиограф",
-    "портативный электрокардиограф",
-    "ЭКГ прибор для дома",
-    "беспроводной кардиограф",
-    "домашний кардиограф",
-    "кардиограф для дома купить",
-    "портативный ЭКГ аппарат",
-    "электрокардиограф портативный купить",
-    "ЭКГ без проводов",
-    "кардиограф без геля",
-    "прибор для снятия ЭКГ дома",
-    "мобильный кардиограф",
-    "персональный кардиограф",
-    "Smartcardio",
-    "Смарткардио",
-    "кардиограф российского производства",
-    "ЭКГ в телефоне",
-    "сатурация",
-    "медицинский прибор для дома",
-  ],
+  title: "Smartcardio",
+  description: "беспроводной кардиограф, ЭКГ и сатурация без геля и проводов, результат сразу в телефоне, прибор разработан и производится в России",
+  keywords: ["беспроводной кардиограф", "ЭКГ", "сатурация", "медицинский прибор", "разработка в России"],
   openGraph: {
-    title: "Купить портативный электрокардиограф Smartcardio — ЭКГ прибор для дома без проводов",
-    description: "Беспроводной кардиограф Smartcardio — снятие ЭКГ и сатурации без геля и проводов, результат сразу в телефоне. Портативный электрокардиограф российского производства. Купить с доставкой по России.",
+    title: "Smartcardio",
+    description: "Беспроводной кардиограф, ЭКГ и сатурация без геля и проводов, результат сразу в телефоне, прибор разработан и производится в России",
     type: "website",
     url: "https://smartcardio.ru/",
     images: [
@@ -79,48 +47,28 @@ export const metadata: Metadata = {
         url: "/images/smartcardioS1.png",
         width: 800,
         height: 600,
-        alt: "Портативный электрокардиограф Smartcardio — ЭКГ прибор для дома",
+        alt: "Smartcardio Device",
       },
       {
         url: "/images/smartcardioS2.png",
         width: 800,
         height: 600,
-        alt: "Купить кардиограф Smartcardio — беспроводной ЭКГ без геля и проводов",
+        alt: "Smartcardio Device",
       },
       {
         url: "/images/smartcardioS3.png",
         width: 800,
         height: 600,
-        alt: "Smartcardio — домашний кардиограф с мобильным приложением",
+        alt: "Smartcardio Device",
       },
     ],
-    siteName: "Smartcardio — портативный электрокардиограф",
+    siteName: "Smartcardio",
     locale: "ru_RU",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Купить кардиограф Smartcardio — портативный ЭКГ прибор для дома",
-    description: "Беспроводной электрокардиограф Smartcardio. ЭКГ и сатурация без геля и проводов. Результат сразу в телефоне. Произведено в России.",
-    images: ["/images/smartcardioS1.png"],
-  },
-  alternates: {
-    canonical: "https://smartcardio.ru/",
-  },
-  applicationName: "Smartcardio",
-  creator: "Nick",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {},
-  category: "Медицинские приборы",
+  applicationName : "Smartcardio",
+  creator : "Nick",
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
@@ -129,102 +77,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <head>
-        <link rel="icon" href="/images/favicon.ico" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: 'ООО "СмартКардио"',
-              alternateName: ["Smartcardio", "СмартКардио"],
-              url: "https://smartcardio.ru",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://smartcardio.ru/images/smartcardioS1.png",
-                width: 800,
-                height: 600,
-              },
-              description: "Купить портативный электрокардиограф Smartcardio. Беспроводной кардиограф и ЭКГ прибор для дома — снятие ЭКГ и сатурации без геля и проводов.",
-              foundingCountry: "RU",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Саратов",
-                addressCountry: "RU",
-              },
-              taxID: "6450120179",
-              legalName: 'ООО "СмартКардио"',
-              parentOrganization: {
-                "@type": "Organization",
-                name: 'ООО "АРИТМЕД"',
-                taxID: "9726013334",
-                address: {
-                  "@type": "PostalAddress",
-                  addressLocality: "Москва",
-                  addressCountry: "RU",
-                },
-                description: "Разработчик портативного электрокардиографа Smartcardio",
-              },
-              sameAs: [],
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "customer service",
-                availableLanguage: "Russian",
-              },
-              makesOffer: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Product",
-                    name: "Портативный электрокардиограф СмартКардио",
-                    url: "https://smartcardio.ru/store/1",
-                  },
-                  priceCurrency: "RUB",
-                  price: 18816,
-                  availability: "https://schema.org/InStock",
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Product",
-                    name: "Портативный электрокардиограф СмартКардио + Чехол для хранения",
-                    url: "https://smartcardio.ru/store/2",
-                  },
-                  priceCurrency: "RUB",
-                  price: 19104,
-                  availability: "https://schema.org/InStock",
-                },
-              ],
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Smartcardio — портативный электрокардиограф",
-              alternateName: "СмартКардио — купить кардиограф для дома",
-              url: "https://smartcardio.ru",
-              description: "Купить кардиограф для дома. Портативный электрокардиограф Smartcardio — ЭКГ прибор без проводов и геля.",
-              inLanguage: "ru",
-              publisher: {
-                "@type": "Organization",
-                name: "Smartcardio",
-                url: "https://smartcardio.ru",
-              },
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://smartcardio.ru/store?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            }),
-          }}
-        />
-      </head>
+    <html lang="en">
+
+      <Head>
+        <meta name="title" content="Smartcardio" />
+        <link rel="hortcut icon" href="/images/favicon.ico"/>
+        <meta name="description" content={"Беспроводной кардиограф, ЭКГ и сатурация без геля и проводов, результат сразу в телефоне, прибор разработан и производится в России"} />
+        <meta name="keywords" content={"беспроводной кардиограф, ЭКГ, сатурация, медицинский прибор, медицина, прибор, разработка в России, сердце, инновация, Smartcardio, Смарткардио, Смарткадио, Smatcardio"} />
+        <meta property="og:title" content={"Smartcardio - Беспроводной кардиограф, ЭКГ и сатурация без геля и проводов."} />
+        <meta property="og:description" content={"Беспроводной кардиограф, ЭКГ и сатурация без геля и проводов, результат сразу в телефоне, прибор разработан и производится в России"} />
+        <meta property="og:type" content={"website"} />
+        <meta property="og:url" content={"https://smartcardio.ru/"} />
+        <meta property="og:image" content={"/images/smartcardioS1.png"} />
+        <meta property="og:site_name" content={"Smartcardio"} />
+        <meta property="og:locale" content={"ru_RU"} />
+        <meta name="robots" content={"index, follow"} />
+        <meta name="viewport" content={"width=device-width, initial-scale=1"} />
+        
+      </Head>
       <body
         className={`${raleway.variable}
             ${inter.variable}

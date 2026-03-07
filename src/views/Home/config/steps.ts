@@ -17,3 +17,4 @@ export const steps:TypeSteps[] = [
         imagePath : "/images/step2.jpg"
     }
 ]
+

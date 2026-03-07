@@ -11,9 +11,10 @@ type IStoreOrder = {
     description : string,
     hoverImage : string,
     id : number,
+    futurePrice : number
 }
 
-const StoreOrder:FC<IStoreOrder> = ({description, name, price, image, hoverImage, id}) => {
+const StoreOrder:FC<IStoreOrder> = ({description, name, price, image, hoverImage, id,  futurePrice}) => {
 
     const dispatch = useAppDispatch();
     const clickHandler = () => {
@@ -32,6 +33,7 @@ const StoreOrder:FC<IStoreOrder> = ({description, name, price, image, hoverImage
                 <p dangerouslySetInnerHTML={{__html : name}} className='big-p !font-medium'></p>
                 {/* <p className='p'>{description}</p> */}
                 <div className='flex gap-2'>
+                    <p className='big-p line-through !font-medium'>{futurePrice}</p>
                     <p className='big-p text-green-500 !font-bold'>{price} p</p>
                 </div>
             </div>
