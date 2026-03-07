@@ -6,6 +6,7 @@ for %%F in (
     src-images\howto-applic-ankle.png
     src-images\howto-applic-knee.png
     src-images\howto-applic-stomach.png
+    src-images\generation.png
     ) do (
         for %%W in (3840) do (
             mkdir public\images\r\%%W

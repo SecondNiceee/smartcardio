@@ -21,16 +21,16 @@ const Generation = () => {
                     <picture className="max-w-[880px] w-full mx-auto relative z-30 block">
                         <source
                             media="(max-width:768px)"
-                            srcSet={createImageResolution("generation.png", 768)}
+                            srcSet={createImageResolution("generation.webp", 768)}
                         />
                         <source
                             media="(max-width:1024px)"
-                            srcSet={createImageResolution("generation.png", 1024)}
+                            srcSet={createImageResolution("generation.webp", 1024)}
                         />
                         <img
                             loading="lazy"
                             className="max-w-[880px] rounded-2xl w-full object-cover h-[300px] sm:h-[400px] md:h-[500px] mx-auto"
-                            src={createImageResolution("generation.png", 1440)}
+                            src={createImageResolution("generation.webp", 1440)}
                             alt="generation"
                         />
                     </picture>
