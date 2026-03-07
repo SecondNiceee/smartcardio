@@ -1,6 +1,5 @@
 for %%F in (
     src-images\for-doctors.png
-    src-images\for-generation.png
     src-images\for-hospitals.png
     src-images\for-users.png
     src-images\howto-applic-ankle.png
