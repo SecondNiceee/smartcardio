@@ -3,6 +3,7 @@ import OrderButton from "@/shared/UI/OrderButton/OrderButton";
 import { CHARACTER } from "@/shared/UI/Reveal/models/CharacterEnum";
 import Reveal from "@/shared/UI/Reveal/Reveal";
 import Image from "next/image";
+import { createImageResolution } from "@/shared/utils/createImgPath";
 
 const Generation = () => {
     return (
@@ -17,7 +18,22 @@ const Generation = () => {
 
                 <Reveal character={CHARACTER.LEFT} className="relative">
                     <div className="w-full left-1/2 -translate-x-1/2 max-w-[880px] h-full blur-3xl opacity-10 absolute  bg-[#5100FD] "/>
-                    <Image  width={1400} height={1400} alt="generation" className='max-w-[880px] rounded-2xl w-full object-cover h-[300px] sm:h-[400px] md:h-[500px] mx-auto relative z-30'  src={"/images/generation.png"}  />
+                    <picture className="max-w-[880px] w-full mx-auto relative z-30 block">
+                        <source
+                            media="(max-width:768px)"
+                            srcSet={createImageResolution("generation.png", 768)}
+                        />
+                        <source
+                            media="(max-width:1024px)"
+                            srcSet={createImageResolution("generation.png", 1024)}
+                        />
+                        <img
+                            loading="lazy"
+                            className="max-w-[880px] rounded-2xl w-full object-cover h-[300px] sm:h-[400px] md:h-[500px] mx-auto"
+                            src={createImageResolution("generation.png", 1440)}
+                            alt="generation"
+                        />
+                    </picture>
                 </Reveal>
 
                 <Reveal character={CHARACTER.RIGHT} className='relative'>
