@@ -38,7 +38,13 @@ const SmartcardioSlider = () => {
           character={CHARACTER.LEFT}
           className="smartcardio-slider__header"
         >
-          Прибор СмартКардио®
+          <div className="flex flex-col gap-2 ">
+            <span>Прибор СмартКардио®</span>
+            <div className="flex items-center gap-3 text-center mx-auto">
+              <span className="font-semibold text-2xl">17 900 ₽</span>
+              <span className="line-through text-[#6cff01] text-2xl">19 600 ₽</span>
+            </div>
+          </div>
         </Reveal>
 
         <Reveal

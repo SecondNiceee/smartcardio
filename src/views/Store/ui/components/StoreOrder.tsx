@@ -34,7 +34,7 @@ const StoreOrder:FC<IStoreOrder> = ({description, name, price, image, hoverImage
                 {/* <p className='p'>{description}</p> */}
                 <div className='flex gap-2'>
                     <p className='big-p line-through !font-medium'>{futurePrice}</p>
-                    <p className='big-p text-green-500 !font-bold'>{price} p</p>
+                    <p className='big-p text-green-500 !font-bold'>{price} pуб</p>
                 </div>
             </div>
         </div>
