@@ -39,10 +39,9 @@ export const metadata: Metadata = {
 // Динамический импорт компонента
 const Store = dynamic(() => import("@/views/Store").then((mod) => mod.Store));
 
-// 2. JSON-LD разметка для каталога (ItemList)
-// Выносим в отдельную константу для чистоты кода
-const catalogSchema = {
-  "@context": "https://schema.org", // ✅ Убрал пробелы
+// JSON-LD разметка ItemList для каталога товаров
+const itemListSchema = {
+  "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Каталог кардиографов Smartcardio",
   "description": "Портативные беспроводные кардиографы для домашнего использования",
@@ -105,10 +104,10 @@ const breadcrumbSchema = {
 const page = () => {
     return (
         <>
-            {/* Вставляем JSON-LD скрипты */}
+            {/* JSON-LD ItemList для каталога */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
             />
             <script
                 type="application/ld+json"
