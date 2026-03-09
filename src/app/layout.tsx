@@ -172,10 +172,6 @@ export const metadata: Metadata = {
       "ru-RU": "https://smartcardio.ru/",
     },
   },
-  verification: {
-    yandex: "your-yandex-verification-code",
-    google: "your-google-verification-code",
-  },
   other: {
     "geo.region": "RU",
     "geo.placename": "Россия",

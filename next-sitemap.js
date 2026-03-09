@@ -1,6 +1,6 @@
 module.exports = {
   siteUrl: 'https://smartcardio.ru',
-  generateRobotsTxt: false, // Используем встроенный robots.ts
+  generateRobotsTxt: false, 
   sitemapSize: 7000,
   exclude: ['/admin/*', '/private/*', '/api/*', '/_next/*'],
   changefreq: 'daily',
