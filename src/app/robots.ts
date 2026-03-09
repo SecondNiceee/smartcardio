@@ -6,26 +6,26 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/', '/private/', '/_next/'],
+        disallow: ['/api/', '/_next/'],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/', '/admin/', '/private/'],
+        disallow: ['/api/'],
       },
       {
         userAgent: 'Yandex',
         allow: '/',
-        disallow: ['/api/', '/admin/', '/private/'],
+        disallow: ['/api/'],
         crawlDelay: 1,
       },
       {
         userAgent: 'Bingbot',
         allow: '/',
-        disallow: ['/api/', '/admin/', '/private/'],
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://smartcardio.ru/sitemap.xml',
-    host: 'https://smartcardio.ru',
+    host: 'smartcardio.ru',
   }
 }
