@@ -1,11 +1,11 @@
 for %%F in (
     src-images\for-doctors.png
+    src-images\for-generation.png
     src-images\for-hospitals.png
     src-images\for-users.png
     src-images\howto-applic-ankle.png
     src-images\howto-applic-knee.png
     src-images\howto-applic-stomach.png
-    src-images\generation.png
     ) do (
         for %%W in (3840) do (
             mkdir public\images\r\%%W
