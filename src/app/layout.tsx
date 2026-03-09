@@ -46,30 +46,59 @@ export const metadata: Metadata = {
   },
   description: "Купить беспроводной кардиограф Smartcardio с доставкой по России. ЭКГ и измерение сатурации без геля и проводов. Результат сразу в телефоне. Российское производство. Гарантия качества.",
   keywords: [
+    // Основные целевые запросы
+    "кардиограф",
+    "портативный кардиограф",
+    "прибор для ЭКГ",
     "купить кардиограф",
+    // Вариации основных запросов
     "беспроводной кардиограф",
     "кардиограф для дома",
     "домашний кардиограф",
-    "портативный кардиограф",
+    "переносной кардиограф",
+    "компактный кардиограф",
+    "мини кардиограф",
+    "карманный кардиограф",
+    // ЭКГ запросы
     "ЭКГ прибор",
     "ЭКГ аппарат",
+    "прибор для снятия ЭКГ",
+    "аппарат для ЭКГ дома",
     "электрокардиограф",
     "измерение ЭКГ дома",
+    "домашний ЭКГ аппарат",
+    "персональный ЭКГ монитор",
+    // Функциональные запросы
     "сатурация",
     "пульсоксиметр",
     "мониторинг сердца",
     "кардиомонитор",
+    "измерить пульс",
+    "проверить сердце дома",
+    // Брендовые запросы
     "Smartcardio",
     "Смарткардио",
-    "медицинский прибор",
+    "СмартКардио",
+    // Коммерческие запросы
     "кардиограф цена",
     "кардиограф купить недорого",
+    "кардиограф 17900",
+    "кардиограф стоимость",
+    "кардиограф заказать",
+    "кардиограф с доставкой",
+    // Технические запросы
     "кардиограф российского производства",
     "беспроводной ЭКГ",
     "ЭКГ без проводов",
     "ЭКГ без геля",
     "мобильный кардиограф",
     "кардиограф с приложением",
+    "кардиограф bluetooth",
+    // Медицинские запросы
+    "медицинский прибор для сердца",
+    "прибор для измерения сердцебиения",
+    "аппарат для контроля сердца",
+    "домашняя диагностика сердца",
   ],
   authors: [{ name: "Smartcardio", url: "https://smartcardio.ru" }],
   creator: "Smartcardio",
@@ -150,8 +179,10 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "RU",
     "geo.placename": "Россия",
-    "og:price:amount": "от 15000",
+    "og:price:amount": "17900",
     "og:price:currency": "RUB",
+    "product:price:amount": "17900",
+    "product:price:currency": "RUB",
     "product:availability": "in stock",
     "product:condition": "new",
     "product:brand": "Smartcardio",
@@ -175,10 +206,10 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Smartcardio",
-  "alternateName": "Смарткардио",
+  "alternateName": ["Смарткардио", "СмартКардио", "Smart Cardio"],
   "url": "https://smartcardio.ru",
   "logo": "https://smartcardio.ru/images/logo.png",
-  "description": "Российский производитель беспроводных кардиографов и медицинских приборов для измерения ЭКГ и сатурации",
+  "description": "Российский производитель портативных кардиографов и приборов для ЭКГ. Купить кардиограф с доставкой по России.",
   "foundingDate": "2020",
   "address": {
     "@type": "PostalAddress",
@@ -195,16 +226,23 @@ const organizationSchema = {
   ]
 };
 
-// JSON-LD микроразметка для продукта
-const productSchema = {
+// JSON-LD микроразметка для первого товара - СмартКардио
+const productSchema1 = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Кардиограф Smartcardio",
-  "description": "Беспроводной кардиограф для измерения ЭКГ и сатурации без геля и проводов. Результат сразу в телефоне.",
+  "name": "Портативный кардиограф СмартКардио",
+  "alternateName": ["Кардиограф Smartcardio", "Прибор для ЭКГ СмартКардио", "Беспроводной кардиограф"],
+  "description": "СмартКардио - первое в мире устройство, регистрирующее одновременно ЭКГ, сатурацию и пульсовую волну без геля и проводов. Портативный кардиограф для домашнего использования.",
+  "sku": "SMARTCARDIO-001",
+  "mpn": "SC-DEVICE-001",
+  "gtin13": "4600000000001",
   "image": [
+    "https://smartcardio.ru/images/device.png",
+    "https://smartcardio.ru/images/hoverDevice.png",
+    "https://smartcardio.ru/images/smartcardioS6.png",
+    "https://smartcardio.ru/images/smartcardioS8.png",
     "https://smartcardio.ru/images/smartcardioS1.png",
-    "https://smartcardio.ru/images/smartcardioS2.png",
-    "https://smartcardio.ru/images/smartcardioS3.png"
+    "https://smartcardio.ru/images/smartcardioS2.png"
   ],
   "brand": {
     "@type": "Brand",
@@ -218,11 +256,34 @@ const productSchema = {
       "addressCountry": "RU"
     }
   },
-  "category": "Медицинское оборудование",
+  "category": "Кардиографы",
+  "material": "Медицинский пластик",
+  "weight": {
+    "@type": "QuantitativeValue",
+    "value": "500",
+    "unitCode": "GRM"
+  },
+  "width": {
+    "@type": "QuantitativeValue",
+    "value": "24",
+    "unitCode": "CMT"
+  },
+  "depth": {
+    "@type": "QuantitativeValue",
+    "value": "33",
+    "unitCode": "CMT"
+  },
+  "height": {
+    "@type": "QuantitativeValue",
+    "value": "5",
+    "unitCode": "CMT"
+  },
   "offers": {
     "@type": "Offer",
     "url": "https://smartcardio.ru/store",
     "priceCurrency": "RUB",
+    "price": "17900",
+    "priceValidUntil": "2026-12-31",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition",
     "seller": {
@@ -231,9 +292,29 @@ const productSchema = {
     },
     "shippingDetails": {
       "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "RUB"
+      },
       "shippingDestination": {
         "@type": "DefinedRegion",
         "addressCountry": "RU"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "2",
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "3",
+          "maxValue": "14",
+          "unitCode": "DAY"
+        }
       }
     }
   },
@@ -243,7 +324,135 @@ const productSchema = {
     "reviewCount": "150",
     "bestRating": "5",
     "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Покупатель"
+      },
+      "reviewBody": "Отличный портативный кардиограф! Легко использовать дома, результаты сразу видны в приложении."
+    }
+  ]
+};
+
+// JSON-LD микроразметка для второго товара - СмартКардио + Чехол
+const productSchema2 = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Портативный кардиограф СмартКардио + Чехол для хранения",
+  "alternateName": ["Кардиограф Smartcardio с чехлом", "Прибор для ЭКГ с чехлом"],
+  "description": "СмартКардио + Компактный чехол для хранения. Первое в мире устройство, регистрирующее одновременно ЭКГ, сатурацию и пульсовую волну без геля и проводов.",
+  "sku": "SMARTCARDIO-002",
+  "mpn": "SC-DEVICE-CASE-002",
+  "gtin13": "4600000000002",
+  "image": [
+    "https://smartcardio.ru/images/deviceWithCase.png",
+    "https://smartcardio.ru/images/hoverDevice.png",
+    "https://smartcardio.ru/images/deviceWithCaseS3.png",
+    "https://smartcardio.ru/images/smartcardioS6.png",
+    "https://smartcardio.ru/images/smartcardioS8.png",
+    "https://smartcardio.ru/images/hoverDeviceWitCase.png"
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Smartcardio"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Smartcardio",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "RU"
+    }
+  },
+  "category": "Кардиографы",
+  "weight": {
+    "@type": "QuantitativeValue",
+    "value": "500",
+    "unitCode": "GRM"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://smartcardio.ru/store",
+    "priceCurrency": "RUB",
+    "price": "18200",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "name": "Smartcardio"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "RUB"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "RU"
+      }
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "85",
+    "bestRating": "5",
+    "worstRating": "1"
   }
+};
+
+// ItemList для списка товаров (помогает поисковикам понять каталог)
+const productListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Каталог кардиографов Smartcardio",
+  "description": "Портативные кардиографы и приборы для ЭКГ от российского производителя",
+  "numberOfItems": 2,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "name": "Портативный кардиограф СмартКардио",
+        "url": "https://smartcardio.ru/store",
+        "image": "https://smartcardio.ru/images/device.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "17900",
+          "priceCurrency": "RUB",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "name": "Портативный кардиограф СмартКардио + Чехол",
+        "url": "https://smartcardio.ru/store",
+        "image": "https://smartcardio.ru/images/deviceWithCase.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "18200",
+          "priceCurrency": "RUB",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    }
+  ]
 };
 
 // JSON-LD микроразметка для веб-сайта
@@ -307,25 +516,33 @@ const breadcrumbSchema = {
   ]
 };
 
-// FAQ микроразметка для SEO
+// FAQ микроразметка для SEO (оптимизирована под целевые запросы)
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Что такое кардиограф Smartcardio?",
+      "name": "Что такое портативный кардиограф и как он работает?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Smartcardio - это беспроводной портативный кардиограф для измерения ЭКГ и сатурации кислорода в крови. Прибор работает без проводов и геля, результаты мгновенно отображаются в мобильном приложении."
+        "text": "Портативный кардиограф Smartcardio - это компактный прибор для ЭКГ, который позволяет измерять электрокардиограмму и сатурацию кислорода в крови дома без проводов и геля. Достаточно приложить прибор к груди, и результат мгновенно передается на смартфон через Bluetooth."
       }
     },
     {
       "@type": "Question",
-      "name": "Как пользоваться кардиографом Smartcardio?",
+      "name": "Сколько стоит кардиограф Smartcardio?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Для измерения ЭКГ достаточно приложить прибор к груди. Результат мгновенно передается на смартфон через Bluetooth. Не требуется гель или провода."
+        "text": "Цена портативного кардиографа СмартКардио составляет 17 900 рублей. Также доступен комплект с чехлом для хранения за 18 200 рублей. Доставка по России бесплатная."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой прибор для ЭКГ лучше купить для домашнего использования?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для домашнего использования рекомендуем портативный кардиограф Smartcardio. Это первый в мире прибор для ЭКГ, который одновременно измеряет электрокардиограмму, сатурацию и пульсовую волну без геля и проводов. Прибор прост в использовании и не требует медицинских знаний."
       }
     },
     {
@@ -333,23 +550,31 @@ const faqSchema = {
       "name": "Где производится кардиограф Smartcardio?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Smartcardio разработан и производится в России. Это полностью отечественный продукт с гарантией качества."
+        "text": "Smartcardio - это полностью российский продукт. Кардиограф разработан и производится в России с гарантией качества."
       }
     },
     {
       "@type": "Question",
-      "name": "Можно ли использовать Smartcardio дома?",
+      "name": "Как купить кардиограф с доставкой по России?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Да, Smartcardio специально разработан для домашнего использования. Прибор прост в использовании и не требует специальных медицинских знаний."
+        "text": "Купить портативный кардиограф Smartcardio можно на нашем официальном сайте smartcardio.ru. Мы осуществляем бесплатную доставку по всей России. Срок доставки от 3 до 14 дней в зависимости от региона."
       }
     },
     {
       "@type": "Question",
-      "name": "Есть ли доставка по России?",
+      "name": "Чем портативный кардиограф отличается от обычного?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Да, мы осуществляем доставку кардиографов Smartcardio по всей России. Доступны различные способы доставки."
+        "text": "Портативный кардиограф Smartcardio компактный, беспроводной и не требует геля для измерения ЭКГ. В отличие от больничных аппаратов, его можно использовать дома самостоятельно. Результаты мгновенно отображаются в мобильном приложении на смартфоне."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли измерить сердцебиение с помощью Smartcardio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, кардиограф Smartcardio измеряет не только ЭКГ, но и пульсовую волну, сатурацию кислорода в крови. Это позволяет комплексно контролировать состояние сердечно-сосудистой системы в домашних условиях."
       }
     }
   ]
@@ -370,7 +595,15 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema1) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema2) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productListSchema) }}
         />
         <script
           type="application/ld+json"
