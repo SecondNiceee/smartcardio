@@ -191,11 +191,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/images/favicon.ico" },
-      { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/apple-touch-icon-57x57.png", sizes: "57x57", type: "image/png" },
+      { url: "/images/apple-touch-icon-72x72.png", sizes: "72x72", type: "image/png" },
     ],
     apple: [
       { url: "/images/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/images/apple-touch-icon-152x152.png", sizes: "152x152", type: "image/png" },
+      { url: "/images/apple-touch-icon-144x144.png", sizes: "144x144", type: "image/png" },
+      { url: "/images/apple-touch-icon-120x120.png", sizes: "120x120", type: "image/png" },
     ],
   },
   manifest: "/manifest.json",
@@ -208,7 +211,7 @@ const organizationSchema = {
   "name": "Smartcardio",
   "alternateName": ["Смарткардио", "СмартКардио", "Smart Cardio"],
   "url": "https://smartcardio.ru",
-  "logo": "https://smartcardio.ru/images/logo.png",
+  "logo": "https://smartcardio.ru/images/logo.jpg",
   "description": "Российский производитель портативных кардиографов и приборов для ЭКГ. Купить кардиограф с доставкой по России.",
   "foundingDate": "2020",
   "address": {
@@ -347,7 +350,7 @@ const productSchema2 = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Портативный кардиограф СмартКардио + Чехол для хранения",
-  "alternateName": ["Кардиограф Smartcardio с чехлом", "Прибор для ЭКГ с чехлом"],
+  "alternateName": ["Кардиограф Smartcardio �� чехлом", "Прибор для ЭКГ с чехлом"],
   "description": "СмартКардио + Компактный чехол для хранения. Первое в мире устройство, регистрирующее одновременно ЭКГ, сатурацию и пульсовую волну без геля и проводов.",
   "sku": "SMARTCARDIO-002",
   "mpn": "SC-DEVICE-CASE-002",
