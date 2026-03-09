@@ -295,6 +295,86 @@ const faqSchema = {
   ]
 };
 
+// HowTo микроразметка - инструкция по использованию
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Как использовать портативный кардиограф Smartcardio",
+  "description": "Пошаговая инструкция по использованию беспроводного кардиографа Smartcardio для измерения ЭКГ дома",
+  "image": "https://smartcardio.ru/images/device.png",
+  "estimatedCost": {
+    "@type": "PriceSpecification",
+    "priceCurrency": "RUB",
+    "price": "17900"
+  },
+  "totalTime": "PT5M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Подготовка устройства",
+      "text": "Распакуйте кардиограф Smartcardio и убедитесь, что батарея заряжена. Скачайте мобильное приложение Smartcardio на смартфон.",
+      "image": "https://smartcardio.ru/images/device.png"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Подключение по Bluetooth",
+      "text": "Включите кардиограф и синхронизируйте его со смартфоном через мобильное приложение. Убедитесь, что связь установлена успешно.",
+      "image": "https://smartcardio.ru/images/device.png"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Размещение прибора",
+      "text": "Приложите кардиограф к груди в районе сердца, прижимая его плотно к коже. Держите прибор неподвижно во время измерения.",
+      "image": "https://smartcardio.ru/images/device.png"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Запуск измерения",
+      "text": "Нажмите кнопку на приборе или в приложении для начала измерения ЭКГ, сатурации и пульса. Процесс занимает несколько секунд.",
+      "image": "https://smartcardio.ru/images/device.png"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Получение результатов",
+      "text": "Результаты измерения (ЭКГ, сатурация, пульс) мгновенно отобразятся в приложении. Вы можете сохранить результаты и поделиться ими с врачом.",
+      "image": "https://smartcardio.ru/images/device.png"
+    }
+  ]
+};
+
+// VideoObject микроразметка - видео инструкция
+const videoObjectSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Как пользоваться кардиографом Smartcardio - видео инструкция",
+  "description": "Видео инструкция по использованию портативного кардиографа Smartcardio для измерения ЭКГ и сатурации кислорода дома",
+  "thumbnailUrl": "https://smartcardio.ru/images/how-user-poster.png",
+  "uploadDate": "2024-01-01T00:00:00Z",
+  "duration": "PT5M",
+  "contentUrl": "https://smartcardio.ru/videos/how-to-use.mp4",
+  "embedUrl": "https://smartcardio.ru/videos/how-to-use.mp4",
+  "author": {
+    "@type": "Organization",
+    "name": "Smartcardio"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Smartcardio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://smartcardio.ru/images/logo.png",
+      "width": 250,
+      "height": 60
+    }
+  },
+  "interactionCount": "1000"
+};
+
 export const metadata: Metadata = {
   title: "Купить кардиограф Smartcardio | Беспроводной ЭКГ прибор для дома с доставкой по России",
   description: "Официальный сайт Smartcardio. Купить беспроводной кардиограф для измерения ЭКГ и сатурации без геля и проводов. Результат сразу в телефоне. Российское производство. Бесплатная доставка. Гарантия качества.",
@@ -357,6 +437,14 @@ const Page = () => {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectSchema) }}
             />
             <Home />
         </>
