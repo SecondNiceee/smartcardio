@@ -204,7 +204,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
-// JSON-LD микроразметка для организации
+// JSON-LD микроразметка для организации (общая для всего сайта)
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -228,9 +228,6 @@ const organizationSchema = {
     "https://t.me/smartcardio"
   ]
 };
-
-// JSON-LD микроразметка для первого товара - СмартКардио
-const productSchema1 = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Портативный кардиограф СмартКардио",
@@ -345,7 +342,7 @@ const productSchema1 = {
   ]
 };
 
-// JSON-LD микроразметка для второго товара - СмартКардио + Чехол
+// JSON-LD микроразметка для втор��го товара - СмартКардио + Чехол
 const productSchema2 = {
   "@context": "https://schema.org",
   "@type": "Product",
