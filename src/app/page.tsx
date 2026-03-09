@@ -120,76 +120,6 @@ const productSchema1 = {
   ]
 };
 
-// JSON-LD микроразметка для второго товара - СмартКардио + Чехол
-const productSchema2 = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Портативный кардиограф СмартКардио + Чехол для хранения",
-  "alternateName": ["Кардиограф Smartcardio с чехлом", "Прибор для ЭКГ с чехлом"],
-  "description": "СмартКардио + Компактный чехол для хранения. Первое в мире устройство, регистрирующее одновременно ЭКГ, сатурацию и пульсовую волну без геля и проводов.",
-  "sku": "SMARTCARDIO-002",
-  "mpn": "SC-DEVICE-CASE-002",
-  "gtin13": "4600000000002",
-  "image": [
-    "https://smartcardio.ru/images/deviceWithCase.png",
-    "https://smartcardio.ru/images/hoverDevice.png",
-    "https://smartcardio.ru/images/deviceWithCaseS3.png",
-    "https://smartcardio.ru/images/smartcardioS6.png",
-    "https://smartcardio.ru/images/smartcardioS8.png",
-    "https://smartcardio.ru/images/hoverDeviceWitCase.png"
-  ],
-  "brand": {
-    "@type": "Brand",
-    "name": "Smartcardio"
-  },
-  "manufacturer": {
-    "@type": "Organization",
-    "name": "Smartcardio",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "RU"
-    }
-  },
-  "category": "Кардиографы",
-  "weight": {
-    "@type": "QuantitativeValue",
-    "value": "500",
-    "unitCode": "GRM"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://smartcardio.ru/store",
-    "priceCurrency": "RUB",
-    "price": "18200",
-    "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition",
-    "seller": {
-      "@type": "Organization",
-      "name": "Smartcardio"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "RUB"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "RU"
-      }
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "85",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
-};
-
 // JSON-LD микроразметка для веб-сайта
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -352,7 +282,7 @@ const videoObjectSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "name": "Как пользоваться кардиографом Smartcardio - видео инструкция",
-  "description": "Видео инструкция по использованию портативного кардиографа Smartcardio для измерения ЭКГ и сатурации кислорода дома",
+  "description": "Видео инструкция по использованию портативног�� кардиографа Smartcardio для измерения ЭКГ и сатурации кислорода дома",
   "thumbnailUrl": "https://smartcardio.ru/images/how-user-poster.png",
   "uploadDate": "2024-01-01T00:00:00Z",
   "duration": "PT5M",
@@ -421,10 +351,6 @@ const Page = () => {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema1) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema2) }}
             />
             <script
                 type="application/ld+json"
