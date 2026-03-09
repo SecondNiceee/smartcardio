@@ -34,8 +34,12 @@ export const Store = () => {
                     )}
                 </div>
             </div>
-            <div className='h-[80px] flex justify-center items-center bg-black w-[100%]'>
-                <p className='mid-title font-semibold text-white'>СмартКардио®</p>
+            <div className='h-auto py-8 flex flex-col justify-center items-center bg-black w-[100%] gap-3'>
+                <p className='mid-title font-semibold text-white'>Прибор СмартКардио®</p>
+                <div className='flex items-center gap-4'>
+                    <p className='text-white text-lg font-semibold'>17 900 ₽</p>
+                    <p className='text-gray-400 text-lg line-through'>19 600 ₽</p>
+                </div>
             </div>
         </main>
     );
