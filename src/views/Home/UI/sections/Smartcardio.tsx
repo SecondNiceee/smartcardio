@@ -35,7 +35,7 @@ const Smartcardio: React.FC = () => {
             <h1 className="smarcardio__header">
               СмартКардио <span>®</span>
             </h1>
-            <h3  dangerouslySetInnerHTML={{__html : `Портативный прибор для мониторинга сердечного ритма. Многоканальная ЭКГ и запись пульсовой волны без геля и проводов.`}} className="smartcardio__description font-bold">
+            <h3 dangerouslySetInnerHTML={{__html : `Портативный прибор <span>для мониторинга сердечного ритма.<span> Многоканальная ЭКГ и запись пульсовой волны без геля и проводов.`}} className="smartcardio__description">
             </h3>
             <div className="smartcardio__buttons">
               <SmartcardioButtons />
