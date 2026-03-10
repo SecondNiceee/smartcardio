@@ -51,31 +51,35 @@ const itemListSchema = {
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Портативный кардиограф СмартКардио",
-      "url": "https://smartcardio.ru/store", 
-      "image": "https://smartcardio.ru/images/device.png",
-      "description": "Беспроводной ЭКГ и сатурация без геля",
-      "offers": {
-        "@type": "Offer",
-        "price": "17900",
-        "priceCurrency": "RUB",
-        "availability": "https://schema.org/InStock",
-        "url": "https://smartcardio.ru/store"
+      "item": {  // ✅ Оборачиваем товар в свойство "item"
+        "@type": "Product",  // ✅ Указываем, что это Продукт
+        "name": "Портативный кардиограф СмартКардио",
+        "image": "https://smartcardio.ru/images/device.png",
+        "description": "Беспроводной ЭКГ и сатурация без геля",
+        "offers": {  // ✅ Теперь offers внутри Product — это валидно!
+          "@type": "Offer",
+          "price": "17900",
+          "priceCurrency": "RUB",
+          "availability": "https://schema.org/InStock",
+          "url": "https://smartcardio.ru/store"
+        }
       }
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Портативный кардиограф СмартКардио + Чехол",
-      "url": "https://smartcardio.ru/store",
-      "image": "https://smartcardio.ru/images/deviceWithCase.png",
-      "description": "Комплект с чехлом для хранения",
-      "offers": {
-        "@type": "Offer",
-        "price": "18200",
-        "priceCurrency": "RUB",
-        "availability": "https://schema.org/InStock",
-        "url": "https://smartcardio.ru/store"
+      "item": {  // ✅ То же самое для второго товара
+        "@type": "Product",
+        "name": "Портативный кардиограф СмартКардио + Чехол",
+        "image": "https://smartcardio.ru/images/deviceWithCase.png",
+        "description": "Комплект с чехлом для хранения",
+        "offers": {
+          "@type": "Offer",
+          "price": "18200",
+          "priceCurrency": "RUB",
+          "availability": "https://schema.org/InStock",
+          "url": "https://smartcardio.ru/store"
+        }
       }
     }
   ]

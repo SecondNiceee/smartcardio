@@ -69,13 +69,10 @@ const productSchema1 = {
     "shippingDetails": {
       "@type": "OfferShippingDetails",
       "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "150",
-        "currency": "RUB",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "priceType": "https://schema.org/MinimumPrice"
-        }
+        "@type": "UnitPriceSpecification",  // ✅ Меняем тип здесь
+        "price": "150",
+        "priceCurrency": "RUB",
+        "priceType": "https://schema.org/MinimumPrice"  // ✅ Указываем, что это мин. цена
       },
       "shippingDestination": {
         "@type": "DefinedRegion",
@@ -237,11 +234,6 @@ const howToSchema = {
   "name": "Как использовать портативный кардиограф Smartcardio",
   "description": "Пошаговая инструкция по использованию беспроводного кардиографа Smartcardio для измерения ЭКГ дома",
   "image": "https://smartcardio.ru/images/device.png",
-  "estimatedCost": {
-    "@type": "PriceSpecification",
-    "priceCurrency": "RUB",
-    "price": "17900"
-  },
   "totalTime": "PT5M",
   "step": [
     {
