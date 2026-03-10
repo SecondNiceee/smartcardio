@@ -41,8 +41,8 @@ const SmartcardioSlider = () => {
           <div className="flex flex-col gap-2">
             <span>Прибор СмартКардио®</span>
             <div className="flex items-center gap-3 text-center mx-auto">
-              <span className="font-semibold md:text-3xl text-2xl">17 900 ₽</span>
-              <span className="line-through text-[#6cff01] md:text-3xl text-2xl">19 600 ₽</span>
+              <span className="font-semibold ">17 900 ₽</span>
+              <span className="line-through text-[#6cff01]">19 600 ₽</span>
             </div>
           </div>
         </Reveal>

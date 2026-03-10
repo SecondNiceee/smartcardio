@@ -61,21 +61,21 @@ function DeliveryMethods<T extends FieldValues>({methods, control, setDeliveryMe
                 {!methods[0].errors && <div className='flex items-center gap-2'>
                     <input {...field} onChange={changeHandler("deliveryPoint")} checked = {value === "deliveryPoint"}   id='PVZ'  type="radio" />  
                     <label htmlFor='PVZ' className="radio-label" />
-                    <label className='p font-bold' htmlFor="PVZ">Доставка в пункт выдачи CDEK <span className='font-extralight'>от { methods[0].calendar_min + ' '+ getDaysString(methods[0].calendar_min) + ', от ' + methods[0].total_sum + 'руб'} </span></label>
+                    <label className='p font-bold' htmlFor="PVZ">Доставка в пункт выдачи CDEK <span className='font-extralight'>от { methods[0].calendar_min + ' '+ getDaysString(methods[0].calendar_min) + ', от ' + methods[0].total_sum + 'руб.'} </span></label>
                 </div>}
                 
                 {!methods[1].errors && 
                 <div className='flex items-center gap-2'>
                     <input  id='POSTAMAT'  type="radio" {...field} checked = {value === "postmat"}  onChange={changeHandler("postmat")} />      
                     <label htmlFor='POSTAMAT' className="radio-label" /> 
-                    <label className='p font-bold' htmlFor="POSTAMAT">Доставка в постамат <span className='font-extralight'>от { methods[1].calendar_min + ' '+ getDaysString(methods[0].calendar_min) + ', от ' + methods[1].total_sum + ' руб'} </span></label>
+                    <label className='p font-bold' htmlFor="POSTAMAT">Доставка в постамат <span className='font-extralight'>от { methods[1].calendar_min + ' '+ getDaysString(methods[0].calendar_min) + ', от ' + methods[1].total_sum + ' руб.'} </span></label>
                 </div> }
 
                 {!methods[2].errors && 
                 <div className='flex items-center gap-2'>
                     <input id='courier' {...field} checked = {value === "courier"}  onChange={changeHandler("courier")}  type="radio" />  
                     <label htmlFor='courier'  className="radio-label" />  
-                    <label className='p font-bold' htmlFor="courier">Доставка курьером <span className='font-extralight'>от { methods[2].calendar_min + ' '+ getDaysString(methods[0].calendar_min) + ', от ' + methods[2].total_sum + ' руб'} </span></label>
+                    <label className='p font-bold' htmlFor="courier">Доставка курьером <span className='font-extralight'>от { methods[2].calendar_min + ' '+ getDaysString(methods[0].calendar_min) + ', от ' + methods[2].total_sum + ' руб.'} </span></label>
                 </div>      }
 
             </>

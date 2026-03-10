@@ -37,6 +37,7 @@ export const Home = () => {
             <Smartcardio />
             <main>
                 <ForWhomTwo />
+                <SmartcardioSlider />   
                 <Downloads />
                 <InteractiveSection />
                 <Indicators />
@@ -47,7 +48,6 @@ export const Home = () => {
                 <RecorderExamples />
                 <Recognition />
                 <HowOrder />
-                <SmartcardioSlider />   
                 <Feedbacks />
                 <Recomendation />
                 <Generation />
