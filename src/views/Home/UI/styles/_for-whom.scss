@@ -15,7 +15,7 @@
         @extend %container;
         max-width: 1310px;
         flex-direction: column;
-        gap: clamp(1.875rem, 1.53rem + 1.72vw, 3.125rem);
+        gap: clamp(1.875rem, 1.53rem + 1vw, 2.5rem);
         align-items: center;
     }
     .choices-wrapper{
